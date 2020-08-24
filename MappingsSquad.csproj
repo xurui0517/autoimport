@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\.nojekyll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\.nojekyll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.SessionStorage" Version="1.0.12" />
     <PackageReference Include="BlazorInputFile" Version="0.2.0" />
     <PackageReference Include="EPPlus" Version="4.5.3.3" />
