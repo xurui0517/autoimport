@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "MappingsSquad.dll": "sha256-0bfL2ONDiYmoRO2qcujCytU1eJ35LspwbHwVwtjGsqE=",
+      "MappingsSquad.dll": "sha256-kHGT\/Tm2fwCchgoLBYe34EVABEztyi9TEzQnjYQ9rSk=",
       "System.Net.Http.Json.dll": "sha256-WkuXkEV\/\/B1J2kYqjuSPxgHubOHALmA548PhKTed2JE=",
       "System.Buffers.dll": "sha256-ZxXy75PYbzJxNfAc\/SAP1nUYm4gt1jSaOpFnBb9m85M=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -67,7 +67,7 @@
       "Blazored.SessionStorage.dll": "sha256-LbVFInFoxYrxwTGfltPxIbhu1vEOYusJAapzXFqwC4M="
     },
     "pdb": {
-      "MappingsSquad.pdb": "sha256-aQ1eNIXgS0V7ciZ6e3W1jmvrRyxpPf389wkmBRYqf94="
+      "MappingsSquad.pdb": "sha256-WTMvaCn+sEtDz2pGKI2\/cu4t40wlkwu8c6ZywyjTLJA="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",
