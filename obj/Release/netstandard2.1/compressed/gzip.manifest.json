@@ -2,222 +2,222 @@
   "FilesToCompress": [
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\0X_-66WGo-efGoJmraBz1gpFSaycl4IttpYy0Bo6gpo=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Blazored.SessionStorage.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Blazored.SessionStorage.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Blazored.SessionStorage.dll.gz"
     },
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\RjWbDFCNJKESSAdoOrrpjjA4HimQW4G3FMBg5bBsrZs=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\BlazorInputFile.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\BlazorInputFile.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/BlazorInputFile.dll.gz"
     },
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fUE0dhUtpajXXd8OnUoTPtjiPZCfx9ahThS4rqQXkPE=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\EPPlus.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\EPPlus.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/EPPlus.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\nJhdSYhFWgYxZ3uuvty7yQcYXAHiSL_qAqJBk7jmLDM=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\MappingsSquad.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_ar02N7GrT0a1HjV0jTPFF2tDK2Upr8_0GhHPvOo0F4=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\MappingsSquad.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/MappingsSquad.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\StvFdN-A16Xrdxc0htDd2lwOOo0wkjCfg14RfXeJOjw=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\RQo5OYcNrm5uDI49CyXBDr4jIu2S6qDgY5TEdq_UUlo=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\1ba2c8xjpip-9-tzmfcjs1OtnOkIuueInn5rcuiLuYg=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Forms.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_SkP9LKVoMxBiT_CLYSh2azo3xJZkibitqOBqPyP7fo=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Forms.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Forms.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ljbv-Cf1Bx2CM-3INnAXc0dhQkbsaVD_3zug4cDAvvE=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\U53uzhNbtLJNEsK5A4DkcOwAkOhknSkQhDZ0Yhi4sYM=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\aYLqznePRTIIOMnAPn0ehRa7K51xJj4WgyMm-2AYksE=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SeK5EW-o1C_2o1Sx4NPfBwIdz1R-AFV3ci5yfQSTp98=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.gz"
     },
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\jzHgXWAvWMkKIGFjZoT84tbe72E_H7CvTr-Dryh4QPs=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.AsyncInterfaces.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.AsyncInterfaces.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\JjAMMfN9r5uwEEewgQXJvJ58JwK4CczK32oD1iMKXwM=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Qso6YU5fFYP8dM3YhJM6rYo5M7ZyNLBmZBHehuGNDG8=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\dwCSB5JntrBSypWzMc_-ahaRukl0ErwoVvzaAXXIZU8=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\zLnE6Y9QZ0doobllUs-XeYpJf67IsyGJFKe7seKtu6g=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\BwmaHeO6cCKb21poXIJIbkymDPYmjr2_7jhIlujOyb0=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.FileExtensions.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\HDrM6ftG-EfHIReiVo8jLog-_Dz1jhWN54S46a-QML4=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.FileExtensions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.FileExtensions.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\7t0odWenjnDyaNLK3RRCiLqidlYFtmJm03S7Anezbfo=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\_DwdbDCdZR3njiou9Ecbo0Q-muF0LuMYSSzS4qyeEn8=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xGblkgmt5jglU3a6-X3zUbUzZF3cJodToaTKcyO8KEU=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\wL_KAMQ-YhVRmigkc7ICYeEfdrWaztMGXS6ucfspe68=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\wjTbZmhIgFIY98uI3hKn72T69D3lfmJvEmyLKxwOMOw=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3rc0hVvlvGFJaq43lVFoGPkieU7LTonk2tRGTLiIFWA=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\p3V-d1cmKL9upRNbA2y2hb5yThPHtYyrHa0Im1EcbH4=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.FileProviders.Abstractions.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\yemLlBLcDBC73IjMCEUxuzUIR5Zh19j5RB0zXEFnl0w=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.FileProviders.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.FileProviders.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\18OEyORCxOaN2adfDKQ0LK17ND1Fmf5AmawB9lykXFE=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.FileProviders.Physical.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\bVY09UoVVEtVr1GNLBRbglorr-KEIkcaYMX7bw2eshM=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.FileProviders.Physical.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.FileProviders.Physical.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xIL7oMLZrKZK85k0EBzv7TMcDGOinTen5D14Iyjl90I=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.FileSystemGlobbing.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\wqbvSZ7FD-3yCfRk0TkmWitifXOyMzR_CtTgSfiZ_EU=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.FileSystemGlobbing.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.FileSystemGlobbing.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ybhsJu2pkoe1MUPDSKFkFwdGJrFvGyb7vxpYpor0thw=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\x8Vs8xw3d7-ulIHyMJCoBibG8Rn83HE9W0qsu1PwUaU=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Q0VxnpnmiRDs8y-kyRFzpmJb3aOYq7FdtYK5ZNHQcCo=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\PLLI1vnrw5_DxOjDL4C2rzQhsIXHwK69FpjP8n3XcYY=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\tS1RfxUc1g8fv8-rI6bpvFBmx8-ElITVPZ1YCwh9M6Y=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\EMwiGM30noEssPwvGIZYnciRRDMhSch4JGz89dxG9CA=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Options.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\FluNWj4JUo-Mn2uoUw6Te3rVhWRCRSSZGSvhIcTNzGc=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\LwRd-PLMRCkMO1X7b49jf1M9lO7lEYijZ-7PhCrWFEs=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Primitives.dll.gz"
     },
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3cbvJEo8k8VJVQwyEZWWQ6yGRFQW8-219DaOnmsX3e4=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.gz"
     },
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\zV-OfJNfNsG404X30Pwkdymdh1KmZpTVEmG-JNFVc-k=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.WebAssembly.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.WebAssembly.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\h13CMrLha_ONVKLgYGbHLBYkdh0Z35ngM88-f38fer8=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Mono.Security.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\wPIMcDdFXRYDadal5ffPB67e44gfqZmMp2YHRacQjY4=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Mono.Security.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Mono.Security.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\rJVYG1icWruE9WUB4nsSCVji2wJ4sErsvNSpd_-37TA=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\389C9c-MEcJTQwMboRAezZE2q8noEoOk8PlKQgbgvuI=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/mscorlib.dll.gz"
     },
     {
       "InputSource": "obj\\Release\\netstandard2.1\\integrity\\8_aWlQshkso8ei8xp5J0gn4ZNGRYRMqXzI_osKzgVYI=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\Newtonsoft.Json.dll",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\Newtonsoft.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Newtonsoft.Json.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\NO4ppDgB_VFepy-5na6w3-g0L6-UM-G1nPkSIyajsGk=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\RUps4-Do-kGFO-tjjcKGnQfDSnOBizCYlKg42p-pE70=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Core.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\IItIxMScIC1CYNlDnuf69Z5BJ0UdD6nX_z1PPCBHkLM=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Data.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\b1oOa_56NAwQHUkJPsL3kQS4M5c_0fsaqwiH9j9J2cQ=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Data.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Data.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\VTtt6fnKYO-hGznzZsAfLs0HDy33xxEX8iqKMFW5kHg=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\nKeGBFA9MsYi5F1xQ6CkgOMubakmQVr9IueJ_YXu_80=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\LLvWiL8XAwj3qWekUPEGm3HiJbH91DAnLsrUuCTZbTI=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Drawing.Common.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6wCE6rnm80RA_I_FttBKGIYCCORy15Y64UBSH84zGQo=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Drawing.Common.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Drawing.Common.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UT5aU0EkhnaUj6ErBvup7orB5SYa3Dxp1qWEzQ3zU8c=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\bWUxn7N_pX65A3tjtWZwPEOQMEEYEFGVx_b6YCxJBvs=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UyiNwy1nbtAvgNV8SHG-ZxD3ZxuiMHfYt2AELsryTAg=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.Json.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\8YbSbI6V8yOgM54Z4JMLlQ-nPXtU9XUGHP1s-2azM1k=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.Json.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\4ARBkgbVIldTK61jYY1duo3l3Kzk2knbjpxRGzXPW_4=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\wQTOXZKGVZ14fjObyrjEfALrGopXGSLM3ENJB0Z81mE=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\g47aAdLdGtVTxa8S-w_4v94PxnjANPfEx8NQzXuD0vA=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Numerics.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\AoR0A8Qi_oFoMDfJE32Ap8OuCxalKnUTufctFUuX9v0=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Numerics.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Numerics.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\jjfgkK1V7Nds5U34FNkc21NxmRu3a-obfoc0JB2-HE0=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SkOLyW-ze0zJCn1P7RYDd2x7jf5ZZmaoDrYy5xKtKsU=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\YbTh7KL7BHyiehMp1tcwwfs6CeC8-ZekxWFVWeJVNz8=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.Serialization.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\-wsIVtAQdTHONagFCc8yt1aMtHLiesCl3sJE8o2F_KQ=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.Serialization.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.Serialization.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Yi28G9hZyXBiEGTKQH95KKbsS16Uxuc5mEOzuosvxDY=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Security.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\HzTInnz5igrR-Gz4KLMpwFDUAM7FV3q9yY92MD45c98=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Security.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Security.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\dXMekO9AWtpSrSfieMUaIier4iAoxo-8ocXxh1_Szbw=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encoding.CodePages.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\nJi_ToeDv_MWe8EJ810Fqzz5meUYDC-YOVbnz-To0sc=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encoding.CodePages.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encoding.CodePages.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\5_sTuxYBejAtrv3DGvb80AubXR_27jreNotBM9AVwwE=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\AYRDAZaNaQ9v-pTcz2hBNdARZsgcNanQ8s5B9BtV-s8=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ureQnwViZCMBL6iBunS90_qaSaN1ep3IaSLUGAg4Mdg=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\95TWSEWtjYipH-S-sM_IKPJ8bojRDalIX3rntkHyG5s=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\QIHZ1ixximiOUKuMJlouN-Ux2-wF38o4yE1BFZD6j6g=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\zRR45XUwYQ-gUzRnYopoI3WZ3XFaMKcRdQGBLDkk3Ug=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\FrCRy1gsKUOWIc9RxtK-fFuiC9w32RFs2XQoNwgH13g=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.Linq.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\e9FSmL-Xu6TowHaaB43ouA5gA5amqvZ07QKhlggeyeM=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.Linq.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.Linq.dll.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fRSzzsu1Sb_w9vfpQf8YZwhFNyyK-RMb00Jc9kNd4EI=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\lslX6xrPa1_izpBSlSI8bryW9mZ68ATVYDgCvQgoDKA=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Bindings.dll.gz"
     },
     {
@@ -241,13 +241,13 @@
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\oVkY7y6JjFHV6kISsbvLJuXFLj6YRiUqezdSMY5W3uo=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\A5450dUXGWtu1-0JjlwGJ6f3XaqFysjyhEQ6jE6uMYM=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     },
     {
-      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\7iiVt34749NRa4yS0ogWGBLXP--eg16u6_pBlH1xaX0=.hash",
-      "Source": "C:\\Code\\RTFileMappingAndImportTool\\MappingsSquad\\MappingsSquad\\obj\\Release\\netstandard2.1\\blazor\\service-worker-assets.js",
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\dUdpYs2MhzzSympSACjS29XWqbtP_SPt_u6paCWcHDo=.hash",
+      "Source": "C:\\Code\\autoimport\\obj\\Release\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Release\\netstandard2.1\\compressed\\service-worker-assets.js.gz"
     }
   ]
