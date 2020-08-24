@@ -1,0 +1,235 @@
+﻿@page "/MappingsSelection"
+
+@using System.Net.Http
+@inject HttpClient Http
+
+@inject ISessionStorageService sessionStorage
+@inject NavigationManager navigationManager
+@inject HttpClient HttpClient
+
+<TopRowPage TopPage="TopPage.Mapping"></TopRowPage>
+
+<Loader Loading="loading"></Loader>
+
+@if (mappedFields.Any())
+{
+    <div class="mt-3 animate slideIn">
+        <div class="row d-flex justify-content-between align-items-baseline">
+            <h3 class="font-weight-bolder">Mapping <i class="far fa-question-circle icon-blur"></i></h3>
+            <span class="ml-5 bg-light px-2 py-2 rounded font-weight-bolder text-black-50"> Press A-Z </span>
+            <span class="ml-2 gochi-hand"> Auto jump to a specific spreadsheet header</span>
+            <div class="flex-grow-1 float-right">
+                <ImportInformation></ImportInformation>
+            </div>
+        </div>
+
+        <div class="row mt-3 d-flex align-items-start">
+            <div class="mapping-field-wrapper col-12 bg-light d-flex flex-column px-4 py-3 rounded">
+                <div class="d-flex flex-row justify-content-around align-items-center">
+                    <div class="text-center col-6 gochi-hand">Uploaded Spreadsheet Header</div>
+                    <div class="text-center col-5 gochi-hand">Mapped Fields</div>
+                    <div class="ml-5 no-gutters col-1 text-center gochi-hand">Confirm Mapping</div>
+                </div>
+                @foreach (var mappedField in mappedFields)
+                {
+                    <MappingField @key="mappedField.Key"
+                                  Fields="@apiMappingfields"
+                                  MappedField="@mappedField.Value"
+                                  OnConfirm="@UpdateMappedField"
+                                  OnSelect="@SelectMappedField">
+                    </MappingField>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@if (mappedFields.Any(mappedField => !mappedField.Value.Skip))
+{
+    <div class="fixed-bottom shadow p-3 bg-white">
+        <div class="container">
+            <button class="btn btn-outline-purple btn-lg px-5" @onclick="@(e => navigationManager.NavigateTo("/FileUpload"))">Back</button>
+            <button class="btn btn-purple btn-lg px-5" @onclick="@(async (e) => await SavingMappedFields())">
+                Next
+            </button>
+        </div>
+    </div>
+}
+
+@if (showOverlay)
+{
+    <Overlay Display="block" OnVanish="@HideOverlay">
+        <div class="bg-white p-5 text-center rounded">
+            <img src="/assests/duo.svg" />
+            <h3 class="mt-4">Mapping Error</h3>
+            <p class="text-black-50">@validationError</p>
+            <button class="btn btn-primary btn-lg">Please Try Again</button>
+        </div>
+    </Overlay>
+}
+
+
+@code {
+    private List<ApiMappingField> apiMappingfields = new List<ApiMappingField>();
+    private Dictionary<string, string> headers = new Dictionary<string, string>();
+    private Dictionary<string, MappedField> mappedFields = new Dictionary<string, MappedField>();
+    private MappedField selectedMappedField = new MappedField();
+    private bool loading = true;
+    private bool isInvalid = false;
+    private bool showOverlay = false;
+    private string validationError = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        loading = true;
+
+        await GetApiMappingFields();
+        headers = await sessionStorage.GetItemAsync<Dictionary<string, string>>("headers");
+        if (headers == null)
+        {
+            navigationManager.NavigateTo("/FileUpload");
+        }
+
+        await CreateMappedFields();
+
+        loading = false;
+
+        await base.OnInitializedAsync();
+    }
+
+
+    private void HideOverlay()
+    {
+        showOverlay = false;
+    }
+
+    private void UpdateMappedField(MappedField mappedField)
+    {
+        mappedFields[mappedField.Column] = mappedField;
+        ValidateCompulsaryFields();
+    }
+
+    private void SelectMappedField(MappedField mappedField)
+    {
+        selectedMappedField = mappedField;
+        ValidateCompulsaryFields();
+    }
+
+    private void ValidateCompulsaryFields()
+    {
+
+        var ilCompulsoryField = apiMappingfields.Where(p => p.IsCompulsory == true);
+
+        if (ilCompulsoryField != null && ilCompulsoryField.Count() > 0)
+        {
+            bool bIsCompulsoryAllMapped = ilCompulsoryField.All(w => mappedFields.Values.Any(o => w.IsCompulsory == true && o.Skip == false && w.ApiInternalName == o.Field?.ApiInternalName));
+
+            if (bIsCompulsoryAllMapped == false)
+            {
+                string strCompulsoryFields = string.Join(", ", ilCompulsoryField.Select(z => z.DisplayName));
+                this.validationError = "Not All Api Compulsary Fields Mapped: " + strCompulsoryFields;
+                isInvalid = true;
+                return;
+            }
+        }
+
+        var ilConfirmedNotMapped = mappedFields.Values.Where(p => p.Skip == false && (p.Field?.ApiInternalName == "" || p.Field == null));
+        if (ilConfirmedNotMapped != null && ilConfirmedNotMapped.Count() > 0)
+        {
+            string stronfirmedNotMapped = string.Join(", ", ilConfirmedNotMapped.Select(z => z.Header));
+            this.validationError = "Confirm Fields Not Mapped: " + stronfirmedNotMapped;
+            isInvalid = true;
+            return;
+        }
+
+        isInvalid = false;
+    }
+
+    private void CreateNewMappedFields()
+    {
+        try
+        {
+            foreach (var header in headers)
+            {
+                if (mappedFields == null)
+                {
+                    mappedFields = new Dictionary<string, MappedField>();
+                }
+                // TODO: Some logic here to auto mapp by compareing the name;
+
+                var matchedFiled = apiMappingfields.Find(e => e.DisplayName.ToLower().Contains(header.Value.ToLower()));
+                if (matchedFiled == null)
+                    matchedFiled = apiMappingfields[0];
+
+                mappedFields.Add(header.Key, new MappedField()
+                {
+                    Column = header.Key,
+                    Header = header.Value,
+                    Field = matchedFiled,
+                    Skip = true
+                });
+            }
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    private async Task SavingMappedFields()
+    {
+        this.ValidateCompulsaryFields();
+        if (isInvalid)
+        {
+
+            this.showOverlay = true;
+            return;
+        }
+
+        await sessionStorage.SetItemAsync<Dictionary<string, MappedField>>("mappedFields", mappedFields);
+        navigationManager.NavigateTo("/Import");
+    }
+
+    private async Task<Dictionary<string, MappedField>> GetMappedFields()
+    {
+        return await sessionStorage.GetItemAsync<Dictionary<string, MappedField>>("mappedFields");
+    }
+
+    private async Task CreateMappedFields()
+    {
+        mappedFields = await GetMappedFields();
+        if (mappedFields == null || !mappedFields.Any())
+        {
+            CreateNewMappedFields();
+        }
+    }
+
+    private async Task GetApiMappingFields()
+    {
+
+        var selectedDataType = await sessionStorage.GetItemAsync<LabelAndValue>("selectedDataType");
+
+        if (selectedDataType == null)
+        {
+            navigationManager.NavigateTo("/");
+            return;
+        }
+
+        try
+        {
+            apiMappingfields = await Http.GetFromJsonAsync<List<ApiMappingField>>("api/Innovation/InnovationImportGetFields?Username=ZBN0236&Password=52287F9C-6BCE-4868-A3AE-6939D4FD2448" + "&strDataType=" + selectedDataType.Value);
+            await sessionStorage.SetItemAsync<List<ApiMappingField>>("apiMappingfields", apiMappingfields);
+            ApiMappingField ApiMappingField = new ApiMappingField();
+            ApiMappingField.ApiInternalName = "";
+            ApiMappingField.DisplayName = "Un Mapping";
+            ApiMappingField.IsCompulsory = false;
+
+            apiMappingfields.Insert(0, ApiMappingField);
+        }
+        catch
+        {
+
+        }
+    }
+}

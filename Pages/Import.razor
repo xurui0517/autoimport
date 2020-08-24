@@ -1,0 +1,223 @@
+﻿@page "/Import"
+
+@using Newtonsoft.Json
+@using System.Net.Http
+@using System.Text
+@using System.Diagnostics 
+
+@inject NavigationManager navigationManager
+@inject ISessionStorageService sessionStorage
+
+
+<TopRowPage TopPage="TopPage.Import"></TopRowPage>
+
+<Loader Loading="loading"></Loader>
+
+<div class="mt-3 animate slideIn">
+    <div class="d-flex justify-content-between align-items-baseline">
+        <h3>Review Fields Before Importing <i class="far fa-question-circle icon-blur"></i></h3>
+        <ImportInformation />
+    </div>
+    <div class="mapping-information d-flex justify-content-around mt-3">
+        <div class="mapped-fields @(showMappedFields ? "active" : "") px-5 mr-1 py-3 flex-fill rounded" @onclick="@(e => SelectMappedFields(true))">
+            <h1 class="text-center">@numberOfMappedFields.Count</h1>
+            <p class="text-center">
+                <i class="checked-icon fas fa-check-circle"></i>
+                <span class="font-weight-bolder">Number of Mapped Fields</span>
+            </p>
+        </div>
+
+        <div class="unmapped-fields @(!showMappedFields ? "active" : "") px-5 py-3 ml-1 flex-fill rounded" @onclick="@(e => SelectMappedFields(false))">
+            <h1 class="text-center">@numberOfUnmappedFields.Count</h1>
+            <p class="text-center">
+                <i class="fas fa-check-circle" style="opacity: 0.5"></i>
+                <span class="font-weight-bolder">Number of UnMapped Fields</span>
+            </p>
+        </div>
+    </div>
+    <div class="mt-3 table-responsive">
+        @if (excelData.Any())
+        {
+            <table class="table table-bordered border-secondary table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        @foreach (var mappedField in selectedFields)
+                        {
+                            <th>@mappedField.Header</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in excelData)
+                    {
+                        <tr>
+                            <td>@item.Key</td>
+                            @foreach (var mappedField in selectedFields)
+                            {
+                                <td>@item.Value[mappedField.Header.ToLower()]</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+@if (showOverlay)
+{
+    <Overlay Display="block" OnVanish="@(e => showOverlay = false)">
+        <div class="bg-white p-5 text-center rounded" @onclick:stopPropagation="true">
+            <img src="/assests/duo.svg" />
+            <h3 class="mt-4">Oops ! There was an exception</h3>
+            <p class="text-black-50">@errorMessage</p>
+            <button class="btn btn-primary btn-lg">Please Try Again</button>
+        </div>
+    </Overlay>
+}
+
+@if (showSuccessPopup)
+{
+    <Overlay Display="block" OnVanish="@(e => navigationManager.NavigateTo("/"))">
+        <div class="bg-purple p-5 text-center rounded" @onclick:stopPropagation="true">
+            <img src="/assests/Trio 2.svg" />
+            <h2 class="text-white mt-3">Congratulations! Your import was successful</h2>
+            <div class="mt-5">
+                <button class="btn btn-green btn-lg" @onclick="@(e => navigationManager.NavigateTo("/"))" @onclick:stopPropagation="true">Start another import</button>
+                <button class="btn btn-outline-light btn-lg text-black-50" @onclick="@(e => navigationManager.NavigateTo("/ImportResult"))">View my imports</button>
+            </div>
+        </div>
+    </Overlay>
+}
+
+<div class="fixed-bottom shadow p-3 bg-white">
+    <div class="container">
+        <button class="btn btn-outline-purple btn-lg px-5" @onclick="@(e => navigationManager.NavigateTo("/MappingsSelection"))">Back</button>
+        <button class="btn btn-purple btn-lg px-5" @onclick="ImportData">Import</button>
+    </div>
+</div>
+
+@code {
+    private Dictionary<string, MappedField> mappedFields = new Dictionary<string, MappedField>();
+    private Dictionary<string, Dictionary<string, string>> excelData = new Dictionary<string, Dictionary<string, string>>();
+    private List<MappedField> numberOfMappedFields = new List<MappedField>();
+    private List<MappedField> numberOfUnmappedFields = new List<MappedField>();
+    private List<MappedField> selectedFields = new List<MappedField>();
+    private bool showMappedFields = true;
+    private bool showOverlay = false;
+    private string errorMessage = string.Empty;
+    private bool showSuccessPopup = false;
+    private bool loading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        mappedFields = await sessionStorage.GetItemAsync<Dictionary<string, MappedField>>("mappedFields");
+        if (mappedFields == null || !mappedFields.Any())
+        {
+            navigationManager.NavigateTo("/MappingsSelection");
+            return;
+        }
+        excelData = await sessionStorage.GetItemAsync<Dictionary<string, Dictionary<string, string>>>("excelData");
+        numberOfMappedFields = mappedFields.Where(mappedField => !mappedField.Value.Skip).Select(mappedField => mappedField.Value).ToList();
+        numberOfUnmappedFields = mappedFields.Where(mappedField => mappedField.Value.Skip).Select(mappedField => mappedField.Value).ToList();
+        selectedFields = numberOfMappedFields;
+        await base.OnInitializedAsync();
+    }
+
+    private void SelectMappedFields(bool selectMappedFields)
+    {
+        showMappedFields = selectMappedFields;
+        selectedFields = selectMappedFields ? numberOfMappedFields : numberOfUnmappedFields;
+    }
+
+    private async Task ImportData()
+    {
+        loading = true;
+        var importStat = new ImportStat();
+
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+        importStat.StartTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
+
+        var selectedDataType = await sessionStorage.GetItemAsync<LabelAndValue>("selectedDataType");
+
+        if (selectedDataType == null)
+        {
+            navigationManager.NavigateTo("/");
+            return;
+        }
+
+        IList<Dictionary<string, string>> ilDataType = new List<Dictionary<string, string>>();
+
+        foreach (var row in excelData.Keys)
+        {
+            if (row != null)
+            {
+                var rowItem = excelData[row];
+                if (rowItem != null)
+                {
+                    var data = new Dictionary<string, string>();
+                    data["ROW"] = row;
+
+                    foreach (var columnName in rowItem.Keys)
+                    {
+                        var macthedColumn = numberOfMappedFields.Find(e => e.Header.ToLower() == columnName.ToLower());
+
+                        if (macthedColumn != null)
+                        {
+                            data[macthedColumn.Field.ApiInternalName] = rowItem[columnName];
+                        }
+                    }
+
+                    ilDataType.Add(data);
+                }
+            }
+        }
+
+        object obImport = new
+        {
+            importType = selectedDataType.Value,
+            importData = ilDataType
+        };
+
+        var jObject = JsonConvert.SerializeObject(obImport);
+
+        string strEndPoint = "https://innovationapiteame.zambion.com/";
+        strEndPoint += "api/Innovation/InnovationImport?";
+        strEndPoint += "Username=ZBN0236&Password=52287F9C-6BCE-4868-A3AE-6939D4FD2448";
+        try
+        {
+
+            HttpClient httpClient = new HttpClient();
+            var stringContent = new StringContent(jObject, UnicodeEncoding.UTF8, "application/json"); // use MediaTypeNames.Application.Json in Core 3.0+ and Standard 2.1+
+
+            HttpResponseMessage response = await httpClient.PostAsync(strEndPoint, stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                await sessionStorage.SetItemAsync<string>("importResult", responseContent);
+                showSuccessPopup = true;
+            }
+            else
+            {
+                errorMessage = "There was an exception in the case";
+                throw new Exception(response.StatusCode.ToString());
+            }
+        }
+        catch (Exception e)
+        {
+            errorMessage = e.Message;
+            showOverlay = true;
+        }
+        finally
+        {
+            loading = false;
+            stopWatch.Stop();
+            importStat.EndTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
+            importStat.TotalMinutes = stopWatch.Elapsed.TotalMinutes;
+            await sessionStorage.SetItemAsync<ImportStat>("importStat", importStat);
+        }
+    }
+}

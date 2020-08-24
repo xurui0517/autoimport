@@ -1,0 +1,25 @@
+﻿@inject NavigationManager navigationManager
+
+<div class="fixed-bottom shadow p-3 bg-white">
+    <div class="container">
+        @if (!string.IsNullOrWhiteSpace(PrevPage))
+        {
+            <button class="btn btn-outline-purple btn-lg px-5" @onclick="@(e => JumpToThePage(PrevPage))">Back</button>
+        }
+        @if (!string.IsNullOrWhiteSpace(NextPage))
+        {
+            <button class="btn btn-purple btn-lg px-5" @onclick="@(e => JumpToThePage(NextPage))">Next</button>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter] public string PrevPage { get; set; }
+    [Parameter] public string NextPage { get; set; }
+
+    private void JumpToThePage(string link)
+    {
+        navigationManager.NavigateTo(link);
+    }
+}
+

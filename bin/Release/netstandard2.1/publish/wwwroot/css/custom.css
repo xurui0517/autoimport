@@ -1,0 +1,314 @@
+﻿.btn-circle {
+    width: 37px;
+    height: 37px;
+    padding: 7px 0px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 1.42857;
+}
+
+    .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 24px;
+        line-height: 1.33;
+    }
+
+
+.bg-purple {
+    background-color: #9531D8 !important;
+}
+
+.btn-page {
+    background-color: #9531D8;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-page-inactive {
+    background-color: #BDBDBD;
+    color: #fff;
+    font-weight:bold;
+    font-size: 15px;
+}
+
+.data-type {
+    border: 2px solid transparent;
+}
+
+    .data-type.selected {
+        border: 2px solid #9531D8;
+    }
+
+    .data-type:hover {
+        border: 2px solid #9531D8;
+        color: #9531D8;
+        cursor: pointer;
+    }
+
+.w-40 {
+    width: 40% !important;
+}
+.w-35 {
+    width: 35% !important;
+}
+.w-30 {
+    width: 30% !important;
+}
+
+.drag-drop-zone {
+    border: 1.5px dashed #AAB0BB;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    color: #aeaeae;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 1.5rem 0 2rem 0;
+    position: relative;
+}
+
+    .drag-drop-zone:hover {
+        border-color: #9531D8;
+        background-color: #f5f5f5;
+    }
+
+    .drag-drop-zone input[type=file] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.check-icon {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.checked-icon {
+    opacity: 1;
+    color: #09CF84;
+    cursor: pointer;
+}
+
+.blur-purple {
+    opacity: 0.5;
+    color: #9531D8;
+}
+
+.mapping-field {
+    height: 50px;
+    border: 2px solid transparent;
+}
+
+.mapping-field:hover {
+    border: 2px solid #9531D8;
+}
+
+.mapping-field-details {
+    border: 2px solid #9531D8;
+}
+
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2000; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.mapping-field-wrapper {
+    border: 1.5px solid #AAB0BB;
+}
+
+.mapped-fields, .unmapped-fields {
+    border: 1.5px solid #AAB0BB;
+    cursor: pointer;
+}
+
+    .mapped-fields.active,
+    .unmapped-fields.active {
+        border-color: #9531D8;
+    }
+
+.line {
+    width: 80px;
+    height: 1px;
+}
+
+
+/*[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}*/
+
+.btn-green {
+    color: #fff;
+    background-color: #09CF84;
+    border-color: #09CF84;
+}
+
+    .btn-green:hover, .btn-green:active {
+        color: #fff;
+        background-color: #40E7A7;
+        border-color: #40E7A7;
+    }
+    .btn-green:focus {
+        color: #fff;
+        box-shadow: 0 0 0 0.2rem rgb(230 193 255);
+    }
+
+.btn-purple {
+    color: #fff;
+    background-color: #9531D8;
+    border-color: #9531D8;
+}
+    .btn-purple:hover, .btn-purple:active {
+        color: #fff;
+        background-color: #b248f9;
+        border-color: #b248f9;
+    }
+    .btn-purple:focus {
+        color: #fff;
+        box-shadow: 0 0 0 0.2rem rgb(230 193 255);
+    }
+
+.btn-outline-purple {
+    color: #9531D8;
+    border-color: #9531D8;
+}
+    .btn-outline-purple:hover {
+        color: #fff;
+        background-color: #9531D8;
+        border-color: #9531D8;
+    }
+    .btn-outline-purple:focus {
+        box-shadow: 0 0 0 0.2rem rgb(230 193 255);
+    }
+
+    .btn-outline-purple.active {
+        color: #fff !important;
+        background-color: #9531D8 !important;
+        border-color: #9531D8 !important;
+    }
+
+    .data-type.selected {
+        background-color: #9531D8 !important;
+        color: #fff;
+    }
+
+.progress-bar-purple {
+    background-color: #9531D8 !important;
+}
+
+.icon-blur {
+    opacity: 0.5;
+}
+
+.tab-purple {
+    border: none !important;
+    cursor: pointer;
+}
+
+    .tab-purple.active {
+        color: #9531D8 !important;
+        border-bottom: 2px solid #b248f9 !important;
+    }
+
+.nav-tabs {
+    border-bottom: none !important;
+}
+/* Loading */
+#spinner-bg {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 999;
+    opacity: 0.4;
+}
+.spinner {
+    margin: 100px auto 0;
+    width: 70px;
+    text-align: center;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    z-index: 9999;
+}
+
+    .spinner > div {
+        width: 18px;
+        height: 18px;
+        background-color: #9531D8;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .spinner .dot1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
+
+    .spinner .dot2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+    }
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0)
+    }
+
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+/*End loading*/

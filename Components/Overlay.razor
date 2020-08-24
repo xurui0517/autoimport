@@ -1,0 +1,12 @@
+﻿<div class="overlay" @onclick="OnVanish" style="display:@Display;">
+    <div class="overlay-content">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    [Parameter] public string Display { get; set; } = "none";
+    [Parameter] public EventCallback OnVanish { get; set; }
+}

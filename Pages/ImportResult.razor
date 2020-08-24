@@ -1,0 +1,151 @@
+﻿@page "/importResult"
+@using Newtonsoft.Json
+
+@inject ISessionStorageService sessionStorage
+@inject NavigationManager navigationManager
+
+<TopRowPage TopPage="TopPage.Result"></TopRowPage>
+
+<div class="mt-3 animate slideIn">
+    <div class="row d-flex justify-content-between align-items-baseline">
+        <h3 class="font-weight-bolder">Data Import Details <i class="far fa-question-circle icon-blur"></i></h3>
+        <ImportInformation />
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-purple" role="progressbar" style="width: @(percentageImport)%" aria-valuenow="@percentageImport" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="mt-3">
+        <TabSet>
+            <Tab Title="Import Result Information">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Start Time</td>
+                            <td>@importStat.StartTime</td>
+                        </tr>
+                        <tr>
+                            <td>End time</td>
+                            <td>@importStat.EndTime</td>
+                        </tr>
+                        <tr>
+                            <td>Total time taken</td>
+                            <td>@importStat.TotalMinutes.ToString("f2") min(s)</td>
+                        </tr>
+                        <tr>
+                            <td>No. of records processed</td>
+                            <td>@numberOfRecords</td>
+                        </tr>
+                        <tr>
+                            <td>No. of records successful</td>
+                            <td>@numberOfSuccessRecords</td>
+                        </tr>
+                        <tr>
+                            <td>No. of records failed</td>
+                            <td>@numberOfErrorRecords</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </Tab>
+            <Tab Title="Number of failed records">
+                @if (failureRecords.Any())
+                {
+                    <Table Items="failureRecords">
+                        <TableHeader>
+                            <th>#</th>
+                            @foreach (var header in headers)
+                            {
+                                if (header != "ROW")
+                                {
+                                    <th>@header</th>
+                                }
+                            }
+                        </TableHeader>
+                        <RowTemplate>
+                            <td>@context["ROW"]</td>
+                            @foreach (var header in headers)
+                                {
+                                    if (header != "ROW")
+                                    {
+                                    <td>@context[header]</td>
+                                    }
+                                }
+                        </RowTemplate>
+                    </Table>
+                }
+            </Tab>
+        </TabSet>
+    </div>
+</div>
+
+<div class="fixed-bottom shadow p-3 bg-white">
+    <div class="container">
+        <button class="btn btn-purple btn-lg px-5" @onclick="@(e => navigationManager.NavigateTo("/"))">Start another import</button>
+    </div>
+</div>
+
+@code {
+    private int numberOfRecords = 0;
+    private int numberOfErrorRecords = 0;
+    private int numberOfSuccessRecords = 0;
+    private int percentageImport = 0;
+
+    private List<string> headers = new List<string> { };
+    private List<Dictionary<string, string>> failureRecords = new List<Dictionary<string, string>>();
+    private ImportStat importStat = new ImportStat();
+
+    protected override async Task OnInitializedAsync()
+    {
+        importStat = await sessionStorage.GetItemAsync<ImportStat>("importStat");
+
+        var importResult = await sessionStorage.GetItemAsync<string>("importResult");
+
+        if (string.IsNullOrEmpty(importResult))
+        {
+            navigationManager.NavigateTo("/Import");
+            return;
+        }
+
+        List<Dictionary<string, string>> resultObjects = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(importResult);
+
+        var errorObjects = resultObjects.Where(obj => !string.IsNullOrEmpty(obj.GetValueOrDefault("Error"))).ToList();
+
+        numberOfRecords = resultObjects.Count;
+        numberOfErrorRecords = errorObjects.Count;
+        numberOfSuccessRecords = numberOfRecords - numberOfErrorRecords;
+
+        failureRecords = await PopulateTheFailureRecords(errorObjects);
+
+        if (failureRecords.Any())
+        {
+            headers = failureRecords.First().Select(record => record.Key).ToList();
+        }
+        percentageImport = numberOfRecords == 0 ? 0 : (numberOfSuccessRecords / numberOfRecords) * 100;
+        await base.OnInitializedAsync();
+    }
+
+    private async Task<List<Dictionary<string, string>>> PopulateTheFailureRecords(List<Dictionary<string, string>> errorObjects)
+    {
+        var mappedFields = await sessionStorage.GetItemAsync<Dictionary<string, MappedField>>("mappedFields");
+        var result = new List<Dictionary<string, string>>();
+        foreach(var errorObject in errorObjects)
+        {
+            var data = new Dictionary<string, string>();
+            foreach(var obj in errorObject)
+            {
+                if (obj.Key != "Error" && obj.Key != "ROW")
+                {
+                    var mappedField = mappedFields.Where(m => m.Value.Field.ApiInternalName == obj.Key).FirstOrDefault();
+                    data.Add(mappedField.Value.Header, obj.Value);
+                }
+                else
+                {
+                    data.Add(obj.Key, obj.Value);
+                }
+            }
+            result.Add(data);
+        }
+        return result;
+    }
+}

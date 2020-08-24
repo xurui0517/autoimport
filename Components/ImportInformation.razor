@@ -1,0 +1,25 @@
+﻿@inject ISessionStorageService sessionStorage
+
+<div class="import-information d-flex justify-content-end">
+    <span class="mr-3">
+        <i class="fas fa-file-import icon-blur"></i>
+        @fileName
+    </span>
+    <span class="ml-3">
+        <i class="fas fa-database icon-blur"></i>
+        @selectedDataType.Label
+    </span>
+</div>
+
+@code {
+    private string fileName = string.Empty;
+    private LabelAndValue selectedDataType = new LabelAndValue();
+
+    protected override async Task OnInitializedAsync()
+    {
+        fileName = await sessionStorage.GetItemAsync<string>("fileName");
+        selectedDataType = await sessionStorage.GetItemAsync<LabelAndValue>("selectedDataType");
+
+        await base.OnInitializedAsync();
+    }
+}

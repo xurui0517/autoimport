@@ -1,0 +1,25 @@
+﻿<div class="my-1">
+    <label>Selected Column</label>
+    <input type="text" class="form-control" disabled value="@MappedField.Header" />
+</div>
+<div class="my-1">
+    <label>Matched Column</label>
+    <input type="text" class="form-control" disabled value="@MappedField.Field" />
+</div>
+<p class="my-1">
+    100% of the row have a value for this column
+</p>
+<div class="my-1">
+    <button class="btn btn-block btn-primary rounded">Confirm Mapping</button>
+</div>
+<div class="my-1 d-flex flex-row justify-content-between align-items-baseline">
+    <button class="btn btn-block btn-outline-dark mr-1">Previous</button>
+    <button class="btn btn-block btn-outline-dark ml-1">Next</button>
+</div>
+<div>
+    <img src="/assests/Blonde.svg" />
+</div>
+
+@code {
+    [Parameter] public MappedField MappedField { get; set; }
+}

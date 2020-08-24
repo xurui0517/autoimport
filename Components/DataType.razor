@@ -1,0 +1,9 @@
+﻿<div class="data-type @(IsSelected ? "selected": "") my-1 clearfix px-3 py-3 bg-light rounded d-flex justify-content-between align-items-center" @onclick="@(async (e) => await OnSelect.InvokeAsync(SelectedData))" @onclick:stopPropagation="true">
+    <span class="float-left font-weight-bolder mr-auto">@SelectedData.Label</span>
+</div>
+
+@code {
+    [Parameter] public LabelAndValue SelectedData { get; set; }
+    [Parameter] public EventCallback<LabelAndValue> OnSelect { get; set; }
+    [Parameter] public bool IsSelected { get; set; }
+}

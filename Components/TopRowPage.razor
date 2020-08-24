@@ -1,0 +1,88 @@
+﻿@using MappingsSquad.Models
+@using MappingsSquad.Extensions
+@inject NavigationManager NavigationManager
+
+<div class="d-flex flex-row justify-content-around">
+    <div class="top-button p-2 d-flex justify-content-between align-items-center">
+        <button class="btn btn-circle @btnSelect" @onclick:preventDefault @onclick="@(e => JumpToThePage(TopPage.SelectDataType, "/"))">
+            <i class="fas fa-mouse-pointer"></i>
+        </button>
+        <span class="mx-2 font-weight-bold">Data Type</span>
+        <div class="ml-2 line border"></div>
+    </div>
+    <div class="top-button p-2 d-flex justify-content-between align-items-center">
+        <button class="btn btn-circle @btnUpload" @onclick:preventDefault @onclick="@(e => JumpToThePage(TopPage.FileUpload, "/FileUpload"))">
+            <i class="fas fa-cloud-upload-alt"></i>
+        </button>
+        <span class="mx-2 font-weight-bold">Select File</span>
+        <div class="ml-2 line border"></div>
+    </div>
+    <div class="top-button p-2 d-flex justify-content-between align-items-center">
+        <button class="btn btn-circle @btnMapping" @onclick:preventDefault @onclick="@(e => JumpToThePage(TopPage.Mapping, "/MappingsSelection"))">
+            <i class="fas fa-arrows-alt-h"></i>
+        </button>
+        <span class="mx-2 font-weight-bold">Mapping</span>
+        <div class="ml-2 line border"></div>
+    </div>
+    <div class="top-button p-2 d-flex justify-content-between align-items-center">
+        <button class="btn btn-circle @btnImport" @onclick:preventDefault @onclick="@(e => JumpToThePage(TopPage.Import, "/Import"))">
+            <i class="fas fa-file-import"></i>
+        </button>
+        <span class="mx-2 font-weight-bold">Import</span>
+        <div class="ml-2 line border"></div>
+    </div>
+    <div class="top-button p-2 d-flex justify-content-between align-items-center">
+        <button class="btn btn-circle @btnResult" @onclick:preventDefault @onclick="@(e => JumpToThePage(TopPage.Result, "/ImportResult"))">
+            <i class="fas fa-table"></i>
+        </button>
+        <span class="mx-2 font-weight-bold">Result</span>
+    </div>
+</div>
+
+@code {
+    [Parameter] public TopPage TopPage { get; set; } = TopPage.SelectDataType;
+
+    private string btnSelect = "btn-page";
+    private string btnUpload = "btn-page";
+    private string btnMapping = "btn-page";
+    private string btnImport = "btn-page";
+    private string btnResult = "btn-page";
+
+    protected override Task OnParametersSetAsync()
+    {
+        if (TopPage.IsTheSelectDataType())
+        {
+            btnUpload = btnMapping = btnImport = btnResult = "btn-page-inactive";
+        }
+        else if (TopPage.IsTheFileUpload())
+        {
+            btnSelect = btnUpload = "btn-page";
+            btnMapping = btnImport = btnResult = "btn-page-inactive";
+        }
+        else if (TopPage.IsTheMapping())
+        {
+            btnSelect = btnUpload = btnMapping = "btn-page";
+            btnImport = btnResult = "btn-page-inactive";
+        }
+        else if (TopPage.IsTheImport())
+        {
+            btnSelect = btnUpload = btnMapping = btnImport = "btn-page";
+            btnResult = "btn-page-inactive";
+        }
+        else
+        {
+            btnSelect = btnUpload = btnMapping = btnImport = btnResult = "btn-page";
+        }
+
+        return base.OnParametersSetAsync();
+    }
+
+    private void JumpToThePage(TopPage page, string link)
+    {
+        if (page.IsTheNextPageOf(TopPage) || page.IsThePreviousPageOf(TopPage))
+        {
+            NavigationManager.NavigateTo(link);
+            return;
+        }
+    }
+}

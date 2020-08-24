@@ -1,0 +1,132 @@
+﻿@page "/FileUpload"
+
+@using System.IO
+@using OfficeOpenXml
+@using MappingsSquad.Extensions
+@using System.Net.Http
+@inject HttpClient Http
+
+@inject NavigationManager navigationManager
+@inject ISessionStorageService sessionStorage
+
+<TopRowPage TopPage="@TopPage.FileUpload"></TopRowPage>
+
+<div class="mt-3 animate slideIn">
+    <h3>Drag/drop the file that you want to import <i class="far fa-question-circle icon-blur"></i></h3>
+    <div class="drag-drop-zone">
+        <InputFile OnChange="ViewFile" />
+        <img src="/assests/solo red.svg" class="float-left ml-5" />
+        @if (fileName != null)
+        {
+            <div class="ml-5">
+                <h4>@fileName</h4>
+                <button class="btn btn-purple btn-lg px-5">Change file</button>
+                <p>.xlsx, .txt, .csv can be accepted</p>
+            </div>
+        }
+        else
+        {
+            <div class="ml-5">
+                <button class="btn btn-purple btn-lg px-5"> Browse Files </button>
+                <p>.xlsx, .txt, .csv can be accepted</p>
+            </div>
+        }
+    </div>
+</div>
+
+@if (showOverlay)
+{
+    <Overlay Display="block" OnVanish="@HideOverlay">
+        <div class="bg-white p-5 text-center rounded">
+            <img src="/assests/duo.svg" />
+            <h3 class="mt-4">This file is not accepted</h3>
+            <p class="text-black-50">You have uploaded an incorrect file type please and please make sure that sheet has at least one column.</p>
+            <button class="btn btn-primary btn-lg">Please Try Again</button>
+        </div>
+    </Overlay>
+}
+
+
+@if (!string.IsNullOrWhiteSpace(fileName))
+{
+    <BottomBar PrevPage="/SelectDataType" NextPage="/MappingsSelection"></BottomBar>
+}
+
+@code {
+    const int MaxFileSize = 5 * 1024 * 1024; // 5MB
+    private bool showOverlay = false;
+    string fileName;
+    Dictionary<string, string> headers = new Dictionary<string, string>();
+    Dictionary<string, Dictionary<string, string>> data = new Dictionary<string, Dictionary<string, string>>();
+
+    string[] columns = new[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
+    private void HideOverlay()
+    {
+        showOverlay = false;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var selectedDataType = await sessionStorage.GetItemAsync<LabelAndValue>("selectedDataType");
+
+        if (selectedDataType == null)
+        {
+            navigationManager.NavigateTo("/");
+            return;
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    async Task ViewFile(IFileListEntry[] files)
+    {
+        var file = files.FirstOrDefault();
+        if (file == null)
+        {
+            return;
+        }
+        else if (file.IsNotAccepted())
+        {
+            showOverlay = true;
+            return;
+        }
+        else if (file.Size > MaxFileSize)
+        {
+            // TODO: Add some error handling here
+        }
+        else
+        {
+            headers = new Dictionary<string, string>();
+            fileName = file.Name;
+            await sessionStorage.SetItemAsync<string>("fileName", fileName);
+            await using MemoryStream memoryStream = new MemoryStream();
+            await file.Data.CopyToAsync(memoryStream);
+
+            using (var package = new ExcelPackage(memoryStream))
+            {
+                var workSheet = package.Workbook.Worksheets.FirstOrDefault();
+                for (int col = 1; col <= workSheet.Dimension.End.Column; col++)
+                {
+                    var headerValue = workSheet.Cells[1, col].Value.ToString();
+                    headers.Add(columns[col - 1], headerValue);
+                }
+
+                for (int row = 2; row <= workSheet.Dimension.End.Row; row++)
+                {
+                    Dictionary<string, string> dataRow = new Dictionary<string, string>();
+                    for (int col = 1; col <= workSheet.Dimension.End.Column; col++)
+                    {
+                        var header = workSheet.Cells[1, col].Value.ToString();
+                        var value = workSheet.Cells[row, col].Value.ToString();
+                        dataRow.Add(header.ToLower(), value);
+                    }
+                    data.Add(row.ToString(), dataRow);
+                }
+            }
+
+            await sessionStorage.SetItemAsync<Dictionary<string, string>>("headers", headers);
+            await sessionStorage.SetItemAsync<Dictionary<string, Dictionary<string, string>>>("excelData", data);
+        }
+    }
+}
